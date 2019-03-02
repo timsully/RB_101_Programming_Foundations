@@ -3,7 +3,10 @@ Write a method that takes one argument, a positive integer, and returns
 a list of the digits in the number.
 =end
 
-
+# Convert a number to a list of its digits
+def digit_list(nums)
+  nums.to_s.chars.map(&:to_i)
+end
 
 # Examples
 puts digit_list(12345) == [1, 2, 3, 4, 5]     # => true
