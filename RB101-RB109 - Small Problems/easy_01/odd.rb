@@ -14,8 +14,6 @@ def to_be_or_not_to_be(lul)
   end
 end
 
-
-
 # Examples
 puts to_be_or_not_to_be(2)    # => false
 puts to_be_or_not_to_be(5)    # => true
