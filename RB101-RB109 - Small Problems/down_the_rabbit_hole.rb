@@ -6,6 +6,9 @@ a program that loads some text messages from a YAML file. We do this with
 YAML::load_file.
 
 Find the documentation for YAML::load_file.
+
+Link:
+http://ruby-doc.org/stdlib/libdoc/psych/rdoc/Psych.html#method-c-load_file
 =end
 require 'yaml'
 MESSAGES = YAML.load_file('calculator_messages.yml')
