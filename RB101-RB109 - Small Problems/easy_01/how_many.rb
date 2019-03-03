@@ -19,15 +19,15 @@ vehicles = [
 
 
 def count_occurrences(array)
-  occurences = {}
+  occurrences = {}
 
   # Iterate over each element and crete a new key-value pair in occurences
   array.each do |element|
     # use Array#count to count the number of elements w/ same value
-    occurences[element] = array.count(element)
+    occurrences[element] = array.count(element)
   end
 
-  occurences.each do |element, count|
+  occurrences.each do |element, count|
     puts "#{element} => #{count}"
   end
 end
