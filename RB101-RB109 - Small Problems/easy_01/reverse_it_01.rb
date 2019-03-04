@@ -4,10 +4,11 @@ the words in reverse order.
 =end
 
 # method takes one argument
-def reverse_sentence(word)
-  
-
-
+def reverse_sentence(string)
+  # first need to separate sub strings by using split w/ no arguments to separate
+  # each word and place it in an array. Use reverse to reverse order of words on
+  # the array
+  string.split.reverse.join(' ')
 end
 
 
