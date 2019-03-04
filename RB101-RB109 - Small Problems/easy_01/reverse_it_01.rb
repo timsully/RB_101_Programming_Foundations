@@ -3,6 +3,7 @@ Write a method that takes one argument, a string, and returns a new string with
 the words in reverse order.
 =end
 
+# "Hello World".split.reverse
 # method takes one argument
 def reverse_sentence(string)
   # first need to separate sub strings by using split w/ no arguments to separate
