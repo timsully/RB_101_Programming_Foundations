@@ -1,4 +1,5 @@
 =begin
+Problem:
 Write a method that takes two arguments, a string and a positive integer, and 
 prints as many times as the integer indicates.
 
