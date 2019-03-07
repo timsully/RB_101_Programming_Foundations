@@ -38,7 +38,7 @@ negative, or zero that returns true if the value is odd, but you can't use the #
 Examples / Test Cases
 
 Validation
-* Not that we derive our examples from our rules? But, what if they are provided?
+* Note that we derive our examples from our rules? But, what if they are provided?
 
 ------------------------
 Example 1
