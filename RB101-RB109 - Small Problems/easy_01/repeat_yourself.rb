@@ -55,7 +55,7 @@ Output
 =end
 
 def repeat(string, int)
-  puts string * int
+  return string * int
 end
 
 repeat('Hello', 1) #=> Hello
