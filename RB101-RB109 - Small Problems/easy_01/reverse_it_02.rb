@@ -25,11 +25,18 @@ Clarifying Questions?
   - Will I be  using a conditional statement within the method to solve this problem?
   - Are there methods I could use to count how many words an element in the array has
     before I re-join them and return it?
-  - 
+  - How do I reverse an string in an array if it has 5 or more letters in it?
 
 Mental Model:
 
 The string passed into the method from being called in the program must first be split into a new array and then reversed and if the letters have 5 or more letters in them to reverse those as well in the new array and return.
+
+Get reversal of inital string input into the array and then go through
+and find which ones have 5 or more words in them.
+
+If array has elements with 5 or more words, reverse them and assign to another variable.
+
+Check each word for the number of characters it contains.
 
 
 
@@ -68,9 +75,22 @@ Output
   - return string: "hcnuaL loohcS"
 ------------------------
 =end
-
-
-
+def reverse_words(string)
+  # holds each word of the modified result
+  words = []
+  
+  # use each to iterate over strings but we separate each word first using split
+  # which returns an array containing the separated words
+  string.split.each do |word|
+    # Mutate words to add it to words array
+    word.reverse! if word.size >= 5
+    # adds each word to words array
+    words << word
+  end
+  
+  # Return the desired string
+  words.join(' ')
+end
 
 
 # Test Cases
