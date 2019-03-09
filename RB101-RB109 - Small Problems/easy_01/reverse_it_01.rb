@@ -69,12 +69,8 @@ Output
 ------------------------
 =end
 def reverse_sentence(str)
-  # Grabs a string and splits the words by space
-  split = str.split(' ')
-  # join them together again with reverse?
-  reverse = split.reverse
-  # Puts into new array with words reversed
-  reverse_joined = reverse.join(' ')
+  # Grabs a string and splits the words by space and returns reversed
+  str.split(' ').reverse.join(' ')
 end
 
 
