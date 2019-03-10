@@ -75,22 +75,19 @@ Output
 
 
 def stringy(binary)
-  # iterate 1s and 0s until length of integer value
-  # while binary.length, generate 10101010 with each method\
-  # if odd print 1 if even print 0
-  
-  while binary.length
-    # print 1 if odd
-    if binary % 2 == 0
-      puts "1"
-    else
-      puts "0"
-    end
-    # print 0 if even
-    # concatenate in the end
+  # array to store numbers and join into a string
+  numbers = []
+
+  # Iterates the amount of times the int value is passed into parameter
+  binary.times do |index|
+    # If index is even puts 1 into number array, else put 0
+    number = index.even? ? 1 : 0
+    # Store values assigned to number variable to numbers array
+    numbers << number
   end
+  # join and return the array as string by converting each element
+  numbers.join
 end
-# binary.times { |i| print i }
 
 
 # Test Cases
