@@ -92,16 +92,6 @@ def stringy(binary)
 end
 # binary.times { |i| print i }
 
-if int % 2 == 0
-  return false
-  # else return false
-else
-  return true
-end
-
-
-
-
 
 # Test Cases
 puts stringy(6) == '101010'    #=> true
