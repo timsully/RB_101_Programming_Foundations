@@ -29,6 +29,7 @@ Output
  Teddy is 69 years old!
 ------------------------
 =end
-
 # Generate a random number between 20..200
-puts "Teddy is #{} years old!"
+a = rand(20..200)
+
+puts "Teddy is #{a} years old!"
