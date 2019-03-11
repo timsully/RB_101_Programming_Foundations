@@ -45,7 +45,6 @@ Output
 ------------------------
 
 =end
-
 def average(avg)
   # adds up the integers
   sum = avg.inject(0) {|result, element| result + element}
