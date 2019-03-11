@@ -19,6 +19,9 @@ Clarifying Questions?
 
 Mental Model:
 
+Write a program that outputs a string and uses string interpolation to add in a 
+random number each time the program is executed which will generate a random 
+number to display a age for "Teddy".
 
 
 Examples/Test Cases
@@ -31,5 +34,4 @@ Output
 =end
 # Generate a random number between 20..200
 a = rand(20..200)
-
 puts "Teddy is #{a} years old!"
