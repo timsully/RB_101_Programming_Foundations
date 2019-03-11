@@ -47,7 +47,10 @@ Output
 =end
 
 def average(avg)
-  # 
+  # adds up the integers
+  sum = avg.inject(0) {|result, element| result + element}
+  # divide sum of array by how many numbers there are to get mean
+  sum / avg.length
 end
 
 # Examples
