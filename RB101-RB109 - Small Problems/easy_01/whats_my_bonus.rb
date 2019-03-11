@@ -60,7 +60,12 @@ Output
 def calculate_bonus(int, boolean)
   # calculate the bonus for a given salary
   # if true, bonus is half the salary
-  # if false, bonus is 0
+  if boolean == true
+    int / 2
+  else boolean == false
+    # if false, bonus is 0
+    return 0
+  end
 end
 
 # Examples should print true
