@@ -33,10 +33,11 @@ Examples/Test Cases
 Example 1
 
 Input
-  - 
+  - Length: 10
+    Width: 7
 
 Output
-  - return what?
+  - 
 ------------------------
 
 =end
@@ -50,3 +51,17 @@ Enter the width of the room in meters:
 7
 The area of the room is 70.0 square meters (753.47 square feet).
 =end 
+puts "Enter the length of the room in meters:"
+length = gets.to_i
+
+puts "Enter the width of the room in meters:"
+width = gets.chomp.to_i
+
+square_meters = length * width
+
+one_square_feet = 10.7639
+
+square_feet =  one_square_feet * square_meters
+# Length multiplied by width gives you the square meters
+# puts "The area of the room is 70.0 square meters (753.47 square feet)."
+puts "The area of the room is #{square_meters.to_f} square meters (#{square_feet.to_f} square feet)."
