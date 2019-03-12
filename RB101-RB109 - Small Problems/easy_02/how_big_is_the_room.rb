@@ -37,7 +37,8 @@ Input
     Width: 7
 
 Output
-  - 
+  - 70.0 square meters
+    753.47 square feet
 ------------------------
 
 =end
