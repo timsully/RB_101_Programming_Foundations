@@ -46,3 +46,5 @@ while value <= 99
   puts value
   value += 2
 end
+
+# 1.upto(99) { |i| puts i if i.odd? }
