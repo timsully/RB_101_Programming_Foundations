@@ -41,14 +41,14 @@ Output
 time = Time.new
 
 print "What is your age? "
-current_age = gets.chomp.to_f
+current_age = gets.chomp.to_i
 
 print "At what age would you like to retire? "
-age_to_retire = gets.chomp.to_f
+age_to_retire = gets.chomp.to_i
 
 years_left = age_to_retire - current_age
 
 age_will_retire = time.year + years_left
 
-puts "It's #{time.year}. You will retire in #{age_will_retire.round}."
-puts "You have only #{years_left.round} years to go!"
+puts "It's #{time.year}. You will retire in #{age_will_retire}."
+puts "You have only #{years_left} years to go!"
