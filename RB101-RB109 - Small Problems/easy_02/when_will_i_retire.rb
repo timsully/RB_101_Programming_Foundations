@@ -25,7 +25,6 @@ variable that adds the current years left until retirement to the current
 year and then add the to the puts statement using string interpolation. BOOM!
 
 
-
 Examples/Test Cases
 ------------------------
 Example 1
@@ -52,3 +51,4 @@ years_left = age_to_retire - current_age
 age_will_retire = time.year + years_left
 
 puts "It's #{time.year}. You will retire in #{age_will_retire.round}."
+puts "You have only #{years_left.round} years to go!"
