@@ -1,0 +1,43 @@
+Goal of Ruby lessons:
+- build fluency in language syntax
+- learn to think like a programmer
+- learn to build applications
+- debugging mindset
+
+We'll cover a lot of topics, but you can categorize it into 3 main buckets:
+- learning to program procedurally
+- OOP
+- other stuff
+  - testing
+  - blocks
+  - tools
+  - problem solving
+  - developing familiarity with the language
+
+Learning to Code vs Learning to Program
+- first, Ruby grammer & syntax (English grammar/vocabulary)
+- second, building applications (writing essays/novels)
+- very frustrating to jump between the two
+- pseudo code
+
+Looking for help
+- Search using the "right phrases"
+  - use the stack trace
+  - reading error messages
+  - adding "ruby"
+- Stack Overflow
+- Ruby Docs
+  - Not Rails Docs, lul.
+
+Asking for Help
+- treat us like coworkers
+- push everything to github
+- forums
+- chatrooms
+- TA office hours
+
+We're learning: Application Development
+- lots of different types of programming
+- Ruby is the syntax, good for all kinds of programming
+
+* build a logical mindset and debugging mindset - build a temperament for programming
