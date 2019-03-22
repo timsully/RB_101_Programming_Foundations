@@ -33,7 +33,8 @@ the line number, and the column number. Then C again for convention, then the
 offense message. After that, it shows you the actual piece of code where the
 offense occurred.
 
-
+To find out which cop complained, we can do this:
+rubocop rubocop.rb --format offenses
 
 =end
 
