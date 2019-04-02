@@ -11,6 +11,18 @@ def integer?(input)
   /^\d+$/.match(input)
 end
 
+def float?(input)
+  # zero or more digits, followed by an optional period
+  # followed by zero or more digits
+  /\d/.match(input) && /^\d*\.?\d*$/.match(input)
+end
+
+def number?(input)
+  # account for inputs that include decimals
+  # verify that only valid numbers -- integers or floats -- are entered?
+  integer?(input) || float?(input)
+end
+
 def operation_to_message(op)
   case op
   when '1'
@@ -47,7 +59,7 @@ loop do # main loop
     prompt("What's the first number?")
     number1 = Kernel.gets().chomp()
 
-    if integer?(number1)
+    if number?(number1)
       break
     else
       prompt("Hmm... that doesn't look like a valid number")
@@ -59,7 +71,7 @@ loop do # main loop
     prompt("What's the second number?")
     number2 = Kernel.gets().chomp()
 
-    if integer?(number2)
+    if number?(number2)
       break
     else
       prompt("Hmm... that doesn't look like a valid number")
