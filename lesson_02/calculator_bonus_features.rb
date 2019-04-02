@@ -7,8 +7,6 @@ require 'yaml'
 
 MESSAGES = YAML.load_file('test.yml')
 
-puts MESSAGES.inspect
-
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
