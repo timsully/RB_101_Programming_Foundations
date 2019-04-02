@@ -8,7 +8,7 @@ def prompt(message)
 end
 
 def integer?(input)
-  input.to_i().to_s() == input
+  /^\d+$/.match(input)
 end
 
 def operation_to_message(op)
