@@ -5,7 +5,15 @@ below and type along!
 =end
 require 'yaml'
 
+LANGUAGE = 'en'
+
 MESSAGES = YAML.load_file('test.yml')
+
+puts MESSAGES.inspect
+
+def messages(message, lang='en')
+  MESSAGES[lang][message]
+end
 
 def prompt(message)
   Kernel.puts("=> #{message}")
@@ -44,7 +52,7 @@ def operation_to_message(op)
   word
 end
 
-prompt(MESSAGES['welcome'])
+prompt(messages('welcome', LANGUAGE))
 
 # intializing outside of loop to reference later
 name = ''
