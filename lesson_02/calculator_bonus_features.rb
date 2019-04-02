@@ -31,14 +31,14 @@ end
 
 def operation_to_message(op)
   word =  case op
-            when '1'
-              'Adding'
-            when '2'
-              'Subtracting'
-            when '3'
-              'Multiplying'
-            when '4'
-              'Dividing'
+          when '1'
+            'Adding'
+          when '2'
+            'Subtracting'
+          when '3'
+            'Multiplying'
+          when '4'
+            'Dividing'
           end
 
   x = "A random line of code"
@@ -87,14 +87,6 @@ loop do # main loop
       prompt("Hmm... that doesn't look like a valid number")
     end
   end
-
-  # operator_prompt = <<-MSG
-  #   What operation would you like me to perform?
-  #   1) add
-  #   2) subtract
-  #   3) multiply
-  #   4) divide
-  # MSG
 
   prompt(MESSAGES['op_prompt'])
 
