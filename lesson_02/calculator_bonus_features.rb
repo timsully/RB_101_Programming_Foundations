@@ -1,5 +1,5 @@
 =begin
-In this assignment, we'll continute on the calculator program from before.
+In this assignment, we'll continue on the calculator program from before.
 We'll refactor parts of it and add some new functionality. Watch the video
 below and type along!
 =end
