@@ -24,16 +24,20 @@ def number?(input)
 end
 
 def operation_to_message(op)
-  case op
-  when '1'
-    'Adding'
-  when '2'
-    'Subtracting'
-  when '3'
-    'Multiplying'
-  when '4'
-    'Dividing'
-  end
+  word =  case op
+            when '1'
+              'Adding'
+            when '2'
+              'Subtracting'
+            when '3'
+              'Multiplying'
+            when '4'
+              'Dividing'
+          end
+
+  x = "A random line of code"
+
+  word
 end
 
 prompt("Welcome to Calculator! Enter your name:")
@@ -81,8 +85,8 @@ loop do # main loop
   operator_prompt = <<-MSG
     What operation would you like me to perform?
     1) add
-    1) subtract
-    1) multiply
+    2) subtract
+    3) multiply
     4) divide
   MSG
 
