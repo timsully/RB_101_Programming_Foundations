@@ -3,6 +3,12 @@ In this assignment, we'll continute on the calculator program from before.
 We'll refactor parts of it and add some new functionality. Watch the video
 below and type along!
 =end
+require 'yaml'
+
+MESSAGES = YAML.load_file('test.yml')
+
+puts MESSAGES.inspect
+
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
@@ -40,7 +46,7 @@ def operation_to_message(op)
   word
 end
 
-prompt("Welcome to Calculator! Enter your name:")
+prompt(MESSAGES['welcome'])
 
 # intializing outside of loop to reference later
 name = ''
@@ -60,7 +66,7 @@ loop do # main loop
   # Initialize variable outside of loop
   number1 = ''
   loop do
-    prompt("What's the first number?")
+    prompt(MESSAGES['first_num'])
     number1 = Kernel.gets().chomp()
 
     if number?(number1)
@@ -72,7 +78,7 @@ loop do # main loop
 
   number2 = ''
   loop do
-    prompt("What's the second number?")
+    prompt(MESSAGES['second_num'])
     number2 = Kernel.gets().chomp()
 
     if number?(number2)
@@ -82,15 +88,15 @@ loop do # main loop
     end
   end
 
-  operator_prompt = <<-MSG
-    What operation would you like me to perform?
-    1) add
-    2) subtract
-    3) multiply
-    4) divide
-  MSG
+  # operator_prompt = <<-MSG
+  #   What operation would you like me to perform?
+  #   1) add
+  #   2) subtract
+  #   3) multiply
+  #   4) divide
+  # MSG
 
-  prompt(operator_prompt)
+  prompt(MESSAGES['op_prompt'])
 
   operator = ''
   loop do
@@ -118,9 +124,9 @@ loop do # main loop
 
   prompt("The result is #{result}")
 
-  prompt("Do you want to perform another calculation? (Y to calculate again)")
+  prompt(MESSAGES['again'])
   answer = Kernel.gets().chomp
   break unless answer.downcase.start_with?('y')
 end
 
-prompt("Thank you, come again.")
+prompt(MESSAGES['bye'])
