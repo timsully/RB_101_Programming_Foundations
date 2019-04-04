@@ -58,10 +58,12 @@ Output
   - monthly payment of $1,000
 ------------------------
 =end
-
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
-prompt("What is your loan amount?")
-loan_amount = Kernel.gets().chomp().to_f
+loop do
+  prompt("Welcome to Mortgage Calculator")
+
+
+end
