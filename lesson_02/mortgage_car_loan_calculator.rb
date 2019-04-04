@@ -8,7 +8,7 @@ Inputs:
 
 Outputs:
   - monthly interest rate
-  - loan duration in months
+  - loan duration in months -- i don't this is an output, double check
 
 Implicit Rules:
   - If it's an annual interest rate convert it to a monthly interest rate
@@ -58,10 +58,19 @@ Output
   - monthly payment of $1,000
 ------------------------
 =end
-
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
+def monthly_interest_rate(val)
+  # annual interest rate divided by 12
+  # experiment with sprintf and use the f flag
+  # to convert floating point argument and specify the
+  # number of digits after the decimal point
+end
+
 prompt("What is your loan amount?")
 loan_amount = Kernel.gets().chomp().to_f
+
+prompt("What is your annual interest rate?")
+annual_interest_rate = Kernel.gets().chomp().to_f
