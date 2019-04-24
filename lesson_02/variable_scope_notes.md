@@ -1,4 +1,6 @@
-# Variable Scope Notes
+# Lesson 2 Notes
+
+## Variable Scope Notes
 
   - Choose descriptive variables & method names
   - develop a habit of thinking about how to name things descriptively
@@ -26,4 +28,11 @@
   - Method invocation - when we call a method, whether that happens to be an existing method from the Ruby Code API or Core Library, or a custom method that you've designed yourself using the def keyword
   - blocks and methods can interact with each other
   - methods can access local variables through interaction w/ blocks
-  - 
+  - referencing a method name, either of an existing method or subsequent to definition, is method invocation
+
+## Pass by Reference vs Pass by Value
+
+  - In C, when you "pass by value", the method only has a copy of the original object. Operations performed on the object within the method have no effect no the original object outside of the method
+  - "Pass by value" - meaning, there should be no way for operations within a method to cause changes to the original object
+  - when an operation within the method mutates the caller, it will affect the original object
+  - re-assignment is not considered a destructive operation
