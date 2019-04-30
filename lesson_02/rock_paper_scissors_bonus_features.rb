@@ -1,55 +1,94 @@
-VALID_CHOICES = %w(rock r paper p scissors lizard l spock)
+=begin
+User makes a choice
+The computer makes a choice
+The winner is displayed
+
+Bonus:
+Add Lizard and Spock
+=end
+VALID_CHOICES = %w(rock paper scissors lizard spock).freeze
+
+RULES = {
+  rock: [:scissors, :lizard],
+  paper: [:rock, :spock],
+  scissors: [:paper, :lizard],
+  spock: [:rock, :scissors],
+  lizard: [:paper, :spock]
+}.freeze
 
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
-# def win?(first, second)
-#   (first == 'rock' && second == 'scissors') ||
-#     (first == 'paper' && second == 'rock') ||
-#     (first == 'scissors' && second == 'paper')
-# end
+def win?(first, second)
+  RULES[first.to_sym].include?(second.to_sym)
+end
 
 def display_results(player, computer)
-  if (player == 'rock' || player == 'r' && computer == 'scissors' || computer == 'lizard' || computer == 'l') ||
-      (player == 'paper' || player == 'p' && computer == 'rock' || computer == 'r' || computer == 'spock') ||
-      (player == 'scissors' && computer == 'paper' || computer == 'p' || computer == 'lizard' || computer == 'l') ||
-      (player == 'lizard' || player == 'l' && computer == 'paper' || computer == 'p' || computer == 'spock') ||
-      (player == 'spock' && computer == 'scissors' || computer == 'rock' || computer == 'r')
+  if win?(player, computer)
     prompt("You won!")
-  elsif (computer == 'rock' || computer == 'r' && player == 'scissors' || player == 'lizard' || player == 'l') ||
-        (computer == 'paper' || computer == 'p' && player == 'rock' || player == 'r' || player == 'spock') ||
-        (computer == 'scissors' && player == 'paper' || player == 'p' || player == 'lizard' || player == 'l') ||
-        (computer == 'lizard' || computer == 'l' && player == 'paper' || player == 'p' || player == 'spock') ||
-        (computer == 'spock' && player == 'scissors' || player == 'rock' || player == 'r')
+  elsif win?(computer, player)
     prompt("Computer won!")
-  else player == computer
+  else
     prompt("It's a tie!")
   end
 end
 
-loop do
-  choice = ''
-  loop do
-    prompt("Choose one: #{VALID_CHOICES.join(', ')}")
-    choice = Kernel.gets().chomp()
-
-    if VALID_CHOICES.include?(choice)
-      break
-    else
-      prompt("That's not a valid choice.")
-    end
-  end
-
-  computer_choice = VALID_CHOICES.sample
-
-  prompt("You chose: #{choice}; Computer chose: #{computer_choice}")
-
-  display_results(choice, computer_choice)
-
-  prompt("Do you want to play again?")
-  answer = Kernel.gets().chomp()
-  break unless answer.downcase().start_with?('y')
+def update_score(score, player, computer)
+  score << 'player' if win?(player, computer)
+  score << 'computer' if win?(computer, player)
 end
 
-prompt("Thank you for playing, Good Bye!")
+def display_score(score)
+  player_wins = score.count('player')
+  computer_wins = score.count('computer')
+  prompt("The score is player: #{player_wins}, computer: #{computer_wins}.")
+  prompt("Keep going to get to 5 wins!") unless game_over?(score)
+end
+
+def game_over?(score)
+  score.count('player') >= 5 || score.count('computer') >= 5
+end
+
+# main loop
+loop do
+  score = []
+
+  # best of 9 loop, what is that exactly?
+  loop do
+    choice = nil
+    # validation loop
+    loop do
+      prompt("Choose one: #{VALID_CHOICES.join(', ')}")
+      choice = gets.chomp.downcase
+
+      # validates choice based on beginning chars
+      break if (
+        choice = VALID_CHOICES.find do |valid_choice|
+          range_end = valid_choice.start_with?('s') ? 1 : 0
+          valid_choice[0..range_end] == choice[0..range_end]
+      end)
+
+      prompt("That's not a valid choice")
+    end
+  
+    computer_choice = VALID_CHOICES.sample
+
+    prompt("You chose: #{choice}; Computer chose: #{computer_choice}")
+
+    display_results(choice, computer_choice)
+
+    update_score(score, choice, computer_choice)
+
+    display_score(score)
+
+    break if game_over?(score)
+  end
+
+  prompt("Game over, good game!")
+  prompt("Would you like to play again?")
+  answer = gets.chomp
+  break unless answer.downcase.start_with?('y')
+end
+
+prompt("Thanks for playing, good bye!")
