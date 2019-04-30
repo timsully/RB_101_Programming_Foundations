@@ -63,15 +63,15 @@ loop do
       choice = gets.chomp.downcase
 
       # validates choice based on beginning chars
-      break if (
-        choice = VALID_CHOICES.find do |valid_choice|
-          range_end = valid_choice.start_with?('s') ? 1 : 0
-          valid_choice[0..range_end] == choice[0..range_end]
-      end)
+      break if
+        choice == VALID_CHOICES.find do |valid_choice|
+        range_end = valid_choice.start_with?('s') ? 1 : 0
+        valid_choice[0..range_end] == choice[0..range_end]
+      end
 
       prompt("That's not a valid choice")
     end
-  
+
     computer_choice = VALID_CHOICES.sample
 
     prompt("You chose: #{choice}; Computer chose: #{computer_choice}")
