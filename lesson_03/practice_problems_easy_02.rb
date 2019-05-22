@@ -115,5 +115,17 @@ Question 9
 Write a one-liner to count the number of lower-case 't' characters in the following string:
 statement = "The Flintstones Rock!"
 
+statement.count('t')
+statement.scan("t")
+statement.include?("t")
+
+
+Question 10
+Back in the stone age (before CSS) we used spaces to align things on the screen. If we had a 40 character wide table of Flintstone family members, how could we easily center that title above the table with spaces?
+
+title = "Flintstone Family Members"
+
+title.center(40)
+
 
 =end
