@@ -11,5 +11,7 @@ answer = values_only.inject(:+) # => 6174
 
 # Another Approach
 total_ages = 0
+# Assign a variable to an initial value of 0 and then iterate
+# through the Hash adding each value in turn to the total
 ages.each { |_, age| total_ages += age }
 total_ages # => 6174
