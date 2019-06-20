@@ -11,3 +11,5 @@ end
 
 # Launch School Solution
 flintstones.index { |name| name[0, 2] == "Be" }
+
+flintstones.index { |name| name.start_with? "Be" }
