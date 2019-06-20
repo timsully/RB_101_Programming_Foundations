@@ -6,6 +6,4 @@ ages = { "Herman" => 32, "Lily" => 30, "Grandpa" => 402, "Eddie" => 10 }
 ages.keep_if { |_, age| age < 100 }
 
 # Deletes every key-value pair from hsh for which block evaluates to false.
-
-
 h.select {|k,v| k > "a"}  #=> {"b" => 200, "c" => 300}
