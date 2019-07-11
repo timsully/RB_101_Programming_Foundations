@@ -5,7 +5,7 @@ This topic will contain preparation, small programs, practice problems, Ruby col
 
 - [x] [Lesson 2: Small Programs](https://github.com/timsully/RB_101_Programming_Foundations/tree/master/lesson_02)
 
-- [ ] [Lesson 3: Practice Problems](https://github.com/timsully/RB_101_Programming_Foundations/tree/master/lesson_03)
+- [x] [Lesson 3: Practice Problems](https://github.com/timsully/RB_101_Programming_Foundations/tree/master/lesson_03)
 
 - [ ] Lesson 4: Ruby Collections
 
